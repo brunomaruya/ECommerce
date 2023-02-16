@@ -1,5 +1,6 @@
 import Button from '@/components/Button';
 import Image from 'next/image';
+import Link from 'next/link';
 import img from '../../../public/images/mainScreenImg.png';
 
 export default function MainScreen() {
@@ -17,8 +18,12 @@ export default function MainScreen() {
         immediate cash and a cleaner conscience.
       </p>
       <div className="flex justify-between mt-12 gap-3.5">
-        <Button className="flex-1" primary={true} content="Log in" />
-        <Button className="flex-1" primary={false} content="Sign Up" />
+        <Link href={'/login'} className="flex-1">
+          <Button primary={true} content="Log in" />
+        </Link>
+        <Link href="/" className="flex-1">
+          <Button primary={false} content="Sign Up" />
+        </Link>
       </div>
     </div>
   );
