@@ -13,7 +13,7 @@ export default function Button({ content, className, primary }: IButton) {
         primary
           ? 'bg-primary-color text-[white] '
           : 'bg-[white] text-primary-color'
-      }  py-3.5 rounded-xl font-semibold`}
+      }  py-3.5 rounded-xl font-semibold hover:brightness-75`}
     >
       {content}
     </button>
