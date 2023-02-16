@@ -4,11 +4,11 @@ import img from '../../../public/images/mainScreenImg.png';
 
 export default function MainScreen() {
   return (
-    <div className="max-w-xs mx-auto  ">
+    <div className="max-w-xs mx-auto    ">
       <Image
         src={img}
         alt=""
-        className="h-[250px] mt-10 ml-[-2.5rem] object-contain"
+        className="h-[300px] pt-10 ml-[-2.5rem] object-contain"
       />
       <h1 className="font-medium text-4xl ">All your shopping in one App</h1>
       <p className="mt-6">
