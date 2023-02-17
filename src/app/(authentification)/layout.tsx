@@ -34,7 +34,7 @@ export default function Layout({ children }: ILayout) {
           </div>
         </div>
       </div>
-      <main className="max-w-xs mx-auto">{children}</main>
+      <main className="max-w-xs mx-auto mt-7">{children}</main>
     </div>
   );
 }
