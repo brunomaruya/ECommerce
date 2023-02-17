@@ -1,4 +1,5 @@
 'use client';
+import Button from '@/components/Button';
 import Link from 'next/link';
 import { Eye, EyeSlash } from 'phosphor-react';
 import React, { useState } from 'react';
@@ -35,12 +36,7 @@ export default function Login() {
             {isVisible ? <EyeSlash /> : <Eye />}
           </div>
         </div>
-        <button
-          type="submit"
-          className="bg-primary-color text-[white] w-full p-[14px] mt-[30px] rounded-xl hover:brightness-50"
-        >
-          Login
-        </button>
+        <Button content="Login" primary={true} className="mt-7" />
         <div className="mt-[16px] flex justify-between">
           <div className="flex gap-3  items-center">
             <input
