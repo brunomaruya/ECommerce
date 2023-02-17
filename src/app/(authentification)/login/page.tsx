@@ -1,7 +1,8 @@
 'use client';
 import Button from '@/components/Button';
+import Input from '@/components/Input';
 import Link from 'next/link';
-import { Eye, EyeSlash } from 'phosphor-react';
+
 import React, { useState } from 'react';
 
 export default function Login() {
@@ -16,26 +17,8 @@ export default function Login() {
         Sign Up
       </Link>
       <form className="mt-[44px]">
-        <div className={`${inputDivStyles} mb-[19px]`}>
-          <input
-            type="text"
-            placeholder="Username"
-            className="p-0 bg-[transparent] w-full "
-          />
-        </div>
-        <div className={`${inputDivStyles} flex items-center`}>
-          <input
-            type={isVisible ? 'text' : 'password'}
-            placeholder="Password"
-            className="p-0 bg-[transparent] w-full "
-          />
-          <div
-            onClick={() => setIsVisible(!isVisible)}
-            className="text-2xl text-primary-color"
-          >
-            {isVisible ? <EyeSlash /> : <Eye />}
-          </div>
-        </div>
+        <Input placeholder="Username" className="mb-5" />
+        <Input placeholder="Password" isPasswordType={true} />
         <Button content="Login" primary={true} className="mt-7" />
         <div className="mt-[16px] flex justify-between">
           <div className="flex gap-3  items-center">
