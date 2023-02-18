@@ -1,7 +1,8 @@
 'use client';
 
+import { AuthContext } from '@/context/AuthContext';
 import { Eye, EyeSlash } from 'phosphor-react';
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 
 interface IInput {
@@ -21,7 +22,7 @@ export default function Input({
     'border-[1px] border-gray-500 bg-[white] py-[15px] px-[23px] rounded-lg';
   const [isVisible, setIsVisible] = useState(false);
 
-  const { register } = useForm();
+  const { register } = useContext(AuthContext);
 
   return (
     <div className={`${inputDivStyles} ${className} flex items-center`}>

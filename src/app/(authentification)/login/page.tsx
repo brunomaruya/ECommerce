@@ -1,18 +1,18 @@
 'use client';
 import Button from '@/components/Button';
 import Input from '@/components/Input';
+import { AuthContext } from '@/context/AuthContext';
 import Link from 'next/link';
 
-import React from 'react';
+import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 
 export default function Login() {
-  const { register, handleSubmit, watch } = useForm();
+  const { handleSubmit } = useContext(AuthContext);
 
   const handleForm = (data: any) => {
     console.log(data);
   };
-  console.log(watch('example'));
 
   return (
     <div>
