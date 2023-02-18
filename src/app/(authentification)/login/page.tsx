@@ -3,12 +3,12 @@ import Button from '@/components/Button';
 import Input from '@/components/Input';
 import Link from 'next/link';
 
-import React, { useState } from 'react';
+import React from 'react';
+import { useForm } from 'react-hook-form';
 
 export default function Login() {
-  const inputDivStyles =
-    'border-[1px] border-gray-500 bg-[white] py-[15px] px-[23px] rounded-lg';
-  const [isVisible, setIsVisible] = useState(false);
+  const { register, handleSubmit } = useForm();
+
   return (
     <div>
       <h1 className="font-semibold text-lg mb-6">Sign in</h1>
@@ -17,9 +17,15 @@ export default function Login() {
         Sign Up
       </Link>
       <form className="mt-[44px]">
-        <Input placeholder="Username" className="mb-5" />
+        <Input
+          placeholder="Username"
+          className="mb-5"
+          registerString="username"
+        />
         <Input placeholder="Password" isPasswordType={true} />
+
         <Button content="Login" primary={true} className="mt-7" />
+
         <div className="mt-[16px] flex justify-between">
           <div className="flex gap-3  items-center">
             <input
