@@ -7,11 +7,12 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 
 export default function Login() {
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, watch } = useForm();
 
-  const handleForm = (data) => {
+  const handleForm = (data: any) => {
     console.log(data);
   };
+  console.log(watch('example'));
 
   return (
     <div>

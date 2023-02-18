@@ -8,7 +8,7 @@ interface IInput {
   isPasswordType?: boolean;
   placeholder: string;
   className?: string;
-  registerString?: string;
+  registerString: string;
 }
 
 export default function Input({
