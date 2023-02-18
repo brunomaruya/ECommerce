@@ -2,7 +2,7 @@
 
 import { Eye, EyeSlash } from 'phosphor-react';
 import React, { useState } from 'react';
-import { useForm } from 'react-hook-form/dist/useForm';
+import { useForm } from 'react-hook-form';
 
 interface IInput {
   isPasswordType?: boolean;

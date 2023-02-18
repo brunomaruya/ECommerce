@@ -9,6 +9,10 @@ import { useForm } from 'react-hook-form';
 export default function Login() {
   const { register, handleSubmit } = useForm();
 
+  const handleForm = (data) => {
+    console.log(data);
+  };
+
   return (
     <div>
       <h1 className="font-semibold text-lg mb-6">Sign in</h1>
@@ -16,13 +20,17 @@ export default function Login() {
       <Link href="/register" className="mb-2 text-primary-color text-base">
         Sign Up
       </Link>
-      <form className="mt-[44px]">
+      <form className="mt-[44px]" onSubmit={handleSubmit(handleForm)}>
         <Input
           placeholder="Username"
           className="mb-5"
           registerString="username"
         />
-        <Input placeholder="Password" isPasswordType={true} />
+        <Input
+          placeholder="Password"
+          isPasswordType={true}
+          registerString="password"
+        />
 
         <Button content="Login" primary={true} className="mt-7" />
 
