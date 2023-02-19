@@ -1,14 +1,19 @@
 'use client';
 import Button from '@/components/Button';
 import Input from '@/components/Input';
+import { AuthContext } from '@/context/AuthContext';
 import Link from 'next/link';
 
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
+import { useForm } from 'react-hook-form';
 
 export default function Login() {
-  const inputDivStyles =
-    'border-[1px] border-gray-500 bg-[white] py-[15px] px-[23px] rounded-lg';
-  const [isVisible, setIsVisible] = useState(false);
+  const { handleSubmit } = useContext(AuthContext);
+
+  const handleForm = (data: any) => {
+    console.log(data);
+  };
+
   return (
     <div>
       <h1 className="font-semibold text-lg mb-6">Sign in</h1>
@@ -16,10 +21,20 @@ export default function Login() {
       <Link href="/register" className="mb-2 text-primary-color text-base">
         Sign Up
       </Link>
-      <form className="mt-[44px]">
-        <Input placeholder="Username" className="mb-5" />
-        <Input placeholder="Password" isPasswordType={true} />
+      <form className="mt-[44px]" onSubmit={handleSubmit(handleForm)}>
+        <Input
+          placeholder="Username"
+          className="mb-5"
+          registerString="username"
+        />
+        <Input
+          placeholder="Password"
+          isPasswordType={true}
+          registerString="password"
+        />
+
         <Button content="Login" primary={true} className="mt-7" />
+
         <div className="mt-[16px] flex justify-between">
           <div className="flex gap-3  items-center">
             <input

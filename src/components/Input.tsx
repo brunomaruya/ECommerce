@@ -1,22 +1,28 @@
 'use client';
 
+import { AuthContext } from '@/context/AuthContext';
 import { Eye, EyeSlash } from 'phosphor-react';
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import { useForm } from 'react-hook-form';
 
 interface IInput {
   isPasswordType?: boolean;
   placeholder: string;
   className?: string;
+  registerString: string;
 }
 
 export default function Input({
   isPasswordType,
   placeholder,
   className,
+  registerString,
 }: IInput) {
   const inputDivStyles =
     'border-[1px] border-gray-500 bg-[white] py-[15px] px-[23px] rounded-lg';
   const [isVisible, setIsVisible] = useState(false);
+
+  const { register } = useContext(AuthContext);
 
   return (
     <div className={`${inputDivStyles} ${className} flex items-center`}>
@@ -24,6 +30,7 @@ export default function Input({
         type={!isPasswordType ? 'text' : isVisible ? 'text' : 'password'}
         placeholder={placeholder}
         className="p-0 bg-[transparent] w-full "
+        {...register(registerString)}
       />
       {isPasswordType && (
         <div
