@@ -9,14 +9,14 @@ interface IInput {
   isPasswordType?: boolean;
   placeholder: string;
   className?: string;
-  registerString: string;
+  registerValue: string;
 }
 
 export default function Input({
   isPasswordType,
   placeholder,
   className,
-  registerString,
+  registerValue,
 }: IInput) {
   const inputDivStyles =
     'border-[1px] border-gray-500 bg-[white] py-[15px] px-[23px] rounded-lg';
@@ -30,7 +30,7 @@ export default function Input({
         type={!isPasswordType ? 'text' : isVisible ? 'text' : 'password'}
         placeholder={placeholder}
         className="p-0 bg-[transparent] w-full "
-        {...register(registerString)}
+        {...register(registerValue)}
       />
       {isPasswordType && (
         <div

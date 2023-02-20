@@ -1,5 +1,10 @@
 import { createContext, ReactNode } from 'react';
-import { useForm, UseFormHandleSubmit, UseFormRegister } from 'react-hook-form';
+import {
+  FieldValues,
+  useForm,
+  UseFormHandleSubmit,
+  UseFormRegister,
+} from 'react-hook-form';
 
 type AuthContextType<
   TFieldValues extends FieldValues = FieldValues,

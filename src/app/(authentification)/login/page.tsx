@@ -25,12 +25,12 @@ export default function Login() {
         <Input
           placeholder="Username"
           className="mb-5"
-          registerString="username"
+          registerValue="username"
         />
         <Input
           placeholder="Password"
           isPasswordType={true}
-          registerString="password"
+          registerValue="password"
         />
 
         <Button content="Login" primary={true} className="mt-7" />
