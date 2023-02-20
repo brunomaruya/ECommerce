@@ -3,9 +3,7 @@ import Button from '@/components/Button';
 import Input from '@/components/Input';
 import { AuthContext } from '@/context/AuthContext';
 import Link from 'next/link';
-
 import React, { useContext } from 'react';
-import { useForm } from 'react-hook-form';
 
 export default function Login() {
   const { handleSubmit } = useContext(AuthContext);
@@ -51,6 +49,11 @@ export default function Login() {
           </Link>
         </div>
       </form>
+      <div className="flex items-center">
+        <div className="flex-1 h-1 bg-gray-400"></div>
+        <div>OR</div>
+        <div className="flex-1 h-1 bg-gray-400"></div>
+      </div>
     </div>
   );
 }
