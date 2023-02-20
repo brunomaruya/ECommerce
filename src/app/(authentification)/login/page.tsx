@@ -49,10 +49,10 @@ export default function Login() {
           </Link>
         </div>
       </form>
-      <div className="flex items-center">
-        <div className="flex-1 h-1 bg-gray-400"></div>
-        <div>OR</div>
-        <div className="flex-1 h-1 bg-gray-400"></div>
+      <div className="flex items-center gap-2">
+        <div className="flex-1 h-[2px] bg-gray-400"></div>
+        <div className="text-primary-color font-semibold">OR</div>
+        <div className="flex-1 h-[2px] bg-gray-400"></div>
       </div>
     </div>
   );
