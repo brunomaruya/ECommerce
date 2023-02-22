@@ -16,7 +16,7 @@ export default function Layout({ children }: ILayout) {
   return (
     <AuthProvider>
       <div>
-        <div className="bg-primary-color h-[159px] w-full"></div>
+        <div className="bg-primary-color h-[130px] w-full"></div>
         <div className="max-w-xs mx-auto">
           <div className="flex justify-around relative py-4">
             <div className="border-b-2 absolute bottom-0 w-full h-[2px] border-gray-300"></div>
