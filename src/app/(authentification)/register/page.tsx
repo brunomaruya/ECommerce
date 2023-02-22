@@ -3,14 +3,34 @@
 import Button from '@/components/Button';
 import Input from '@/components/Input';
 import { AuthContext } from '@/context/AuthContext';
+import axios from 'axios';
 import Link from 'next/link';
 import React, { useContext } from 'react';
+
+import handler from '@/pages/api/register';
+
+type formTypes = {
+  name: string;
+  email: string;
+  password: string;
+};
 
 export default function Register() {
   const { handleSubmit } = useContext(AuthContext);
 
-  const handleForm = (data: any) => {
-    console.log(data);
+  const onSubmit = async (formData: any) => {
+    try {
+      const name = formData.name;
+      const email = formData.email;
+      const password = formData.password;
+      const { data } = await axios.post('/api/register', {
+        name,
+        email,
+        password,
+      });
+
+      console.log(data);
+    } catch (error) {}
   };
 
   return (
@@ -20,7 +40,8 @@ export default function Register() {
       <Link href="/login" className="mb-2 text-primary-color text-base">
         Sign In
       </Link>
-      <form className="mt-[44px]" onSubmit={handleSubmit(handleForm)}>
+      <form className="mt-[44px]" onSubmit={handleSubmit(onSubmit)}>
+        <Input placeholder="Name" className="mb-5" registerValue="name" />
         <Input placeholder="Email" className="mb-5" registerValue="email" />
         <Input
           placeholder="Password"

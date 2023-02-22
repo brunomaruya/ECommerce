@@ -4,7 +4,7 @@ const nextConfig = {
     appDir: true,
   },
   env: {
-    DB_URI: 'mongobd://localhost:27017/next13-auth',
+    DB_URI: 'mongobd://localhost:3000/next13-auth',
     NEXTAUTH_SECRET: 'codingwithabbas',
   },
 };
